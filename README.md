@@ -1,15 +1,6 @@
----
-title: "'Structure-based design of next-generation piggyBac transposasomes for genome engineering'"
-author: "Computational methods by Pavol Genzor"
-output:
-  pdf_document: default
-  html_document: default
-  fontsize: 8pt
----
+#### "'Structure-based design of next-generation piggyBac transposasomes for genome engineering'"
 
-\center
-
-### *Wentian Luo, Alison B. Hickman, Pavol Genzor, Christopher M. Furman, Anna Menshikh, Rodolfo Ghirlando, Astrid Haase, Fred Dyda, and Matthew H. Wilson*  
+## *Wentian Luo, Alison B. Hickman, Pavol Genzor, Christopher M. Furman, Anna Menshikh, Rodolfo Ghirlando, Astrid Haase, Fred Dyda, and Matthew H. Wilson*  
 
 ####
 This document contains sample of computational methods associated with the manuscript. Please contact Dr. Astrid Haase (astrid.haase@nih.gov) with any questions.   
