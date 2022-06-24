@@ -1,6 +1,40 @@
-# piggyBac_mutants
-Study of wild type and mutant piggyBac proteins and their transposition specificities in HCT116 cells.
-Please see the computational methods and sample data in the folders within this repository. 
+---
+title: "'Structure-based design of next-generation piggyBac transposasomes for genome engineering'"
+author: "Computational methods by Pavol Genzor"
+output:
+  pdf_document: default
+  html_document: default
+  fontsize: 8pt
+---
 
-Methods and code will be available upon submission. 
+\center
 
+### *Wentian Luo, Alison B. Hickman, Pavol Genzor, Christopher M. Furman, Anna Menshikh, Rodolfo Ghirlando, Astrid Haase, Fred Dyda, and Matthew H. Wilson*  
+
+####
+This document contains sample of computational methods associated with the manuscript. Please contact Dr. Astrid Haase (astrid.haase@nih.gov) with any questions.   
+
+Related code, sample data and functions are also available at github <https://github.com/HaaseLab/piggyBac_mutants> page.   
+
+
+####
+#### Table of Content
+
+* Raw data processing
+  * Read trimming and genomic alignments parameters
+  
+* ANALYSIS
+  * Integration and target site duplication analysis
+  * Loading paired-end (PE) .bam into R 
+  * Identifying integration regions - "peaks"
+
+* PLOTS
+  * Chromosome peak distribution 
+  * Genome annotation
+  * Tiled integration map
+  * Genome coverage
+  
+* Functions
+  * filterBamPE()
+  * findPeaksInPERegions()
+  
