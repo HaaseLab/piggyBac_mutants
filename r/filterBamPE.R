@@ -19,16 +19,19 @@ filterBamPE <- function(
   IS.PROPER.PAIR = TRUE, 
   IS.UNMAPPED.QUERY = FALSE,
   IS.SECONDARY.ALIGNMENT = FALSE,
+  WHICH="",
   
   ## OPTIONS 2
+  SEQ.LEVELS.STYLE="UCSC",
   YIELD.SIZE=NA
 ){
   
   ## AUTHOR: Pavol Genzor
   ## Use: Load PE bam file into R
-  ## 10.25.21; Version 3; adding tags, correcting the lane info
+  ## 07.06.22; Version 4; ensuring that different seqlevels are considered: NCBI/UCSC
   
   ## NOTE ON BAM INFO
+  ## 10.25.21; Version 3; adding tags, correcting the lane info
   ## 10.25.21; Version 2; added Yield.size and width filter
   ## 10.22.21; Version 1; original
   ## 
@@ -41,7 +44,7 @@ filterBamPE <- function(
   ## check input
   if(is.null(BAM.FILE)) stop("Please provide full path to a .bam file !!!")
   if(is.null(BAM.NAME)) stop("Please provide .bam name !!!")
-  if(is.null(BS.SPECIES)) stop("Please provide BSSPECIES name !!!")
+  if(is.null(BS.SPECIES)) stop("Please provide BS.SPECIES name !!!")
   
   message("Starting")
   message(paste0(" file: ",BAM.NAME))
@@ -49,9 +52,10 @@ filterBamPE <- function(
   PROGRESS.L[["ID"]] <- BAM.NAME
   
   if(isTRUE(STANDARD.CONTIGS.ONLY)){
-    WHICH <- keepStandardChromosomes(seqinfo(eval(parse(text = BS.SPECIES)))) 
-  } else { WHICH = ""}
-  
+    WHICH <- keepStandardChromosomes(seqinfo(eval(parse(text = BS.SPECIES))))
+    if(SEQ.LEVELS.STYLE %in% "NCBI"){
+      seqlevelsStyle(WHICH) <- SEQ.LEVELS.STYLE} }
+
   message("\tloading parameters")
   message(paste0(
     "\t\t TAGS: ", paste(TAGS,collapse = ", "),"\n",
@@ -70,7 +74,7 @@ filterBamPE <- function(
                                            isProperPair = IS.PROPER.PAIR, 
                                            isUnmappedQuery = IS.UNMAPPED.QUERY,
                                            isSecondaryAlignment = IS.SECONDARY.ALIGNMENT))
-  
+
   message("\tloading PE .bam file into GAlignments")
   if(is.na(YIELD.SIZE)){message("\t\t all reads")}
   else{message(paste0("\t\t YIELD.SIZE: ",YIELD.SIZE))}
