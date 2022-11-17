@@ -8,8 +8,9 @@
 
 _Computational methods by: Pavol Genzor_
 
-Accepted by NAR: November 2022
-First deposited on Githhub: 06.24.2022
+
+__Accepted by journal:__ November 2022  
+__First deposited on Githhub:__ 06.24.2022
 
 ####
 This document contains sample of computational methods associated with the manuscript. Please see the folders in this repository for sample data, mardowns/PDF of methods, and functions specific for this manuscript. Please contact Dr. Astrid Haase (astrid.haase@nih.gov) with any questions.   
